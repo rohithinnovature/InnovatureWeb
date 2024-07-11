@@ -1,0 +1,107 @@
+/* Topbar.css */
+
+/* Base styles */
+.topbar {
+  background-color: slateblue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  flex-direction: row;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  margin-left: auto; /* Push menu icon to the right */
+}
+
+.menu-icon svg {
+  font-size: 1.5rem;
+  color: white; /* Change icon color */
+}
+
+.menu-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* Initially hide the menu */
+  position: absolute;
+  top: 100%; /* Position dropdown menu below the topbar */
+  right: 0; /* Adjust the position from the right */
+  background-color: slateblue;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Example box shadow */
+  z-index: 1; /* Ensure dropdown is on top of other content */
+}
+
+.menu-items.show {
+  display: block; /* Show menu when .show class is applied */
+}
+
+.menu-items li {
+  padding: 0.5rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu-items a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+  .topbar {
+      padding: 0.5rem;
+      flex-direction: row; /* Ensure items are aligned horizontally */
+      justify-content: space-between; /* Distribute items evenly */
+  }
+
+  .logo {
+      font-size: 1.2rem;
+      margin-right: auto; /* Push logo to the left */
+  }
+
+  /* .menu-icon {
+      display: block; Display the menu icon for tablets and smaller screens
+  } */
+
+  .nav {
+      position: relative; /* Ensure dropdown menu is positioned relative to nav */
+  }
+
+  .menu-items {
+      position: absolute;
+      top: 100%; /* Position dropdown menu below the topbar */
+      right: 0; /* Adjust the position from the right */
+  }
+
+  .menu-items li {
+      padding: 0.5rem;
+  }
+
+  .menu-items a {
+      text-decoration: none;
+      color: white;
+  }
+
+  .menu-items a:hover {
+      text-decoration: underline;
+  }
+}
